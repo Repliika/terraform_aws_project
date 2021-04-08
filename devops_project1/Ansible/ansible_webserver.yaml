@@ -1,0 +1,24 @@
+
+
+  - name: configure webserver playbook
+    hosts: webservers
+    tasks:
+   
+   
+      - name: requirements
+        apt:
+          update_cache: yes
+          name: python3-pip
+        become: yes
+
+      - name: install docker
+        apt:
+          update_cache: yes
+          name: docker-io
+        become: yes
+
+      - name: start docker
+        shell: |
+          systemctl start docker
+          systemctl enable docker
+        become: yes
