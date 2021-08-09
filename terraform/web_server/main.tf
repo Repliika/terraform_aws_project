@@ -14,7 +14,7 @@ provider "aws" {
 resource "aws_instance" "web_server" {
   ami           = "ami-042e8287309f5df03"
   instance_type = "t2.micro"
-  key_name      = "gino-key"
+  key_name      = "gino-key" #replace gino-key with your own aws key
 
   tags = {
     Name = var.webserver_name
@@ -23,7 +23,7 @@ resource "aws_instance" "web_server" {
 resource "aws_instance" "jenkins_server" {
   ami           = "ami-042e8287309f5df03"
   instance_type = "t2.micro"
-  key_name      = "gino-key"
+  key_name      = "gino-key"#replace gino-key with your own aws key
 
   tags = {
     Name = var.jenkins_name
